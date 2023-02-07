@@ -71,7 +71,7 @@ function findingBadData(array) {
   let count = 0;
 
   for (let i = 0; i < array.length; i++) {
-    if (typeof array[i] !== "number") {
+    if (typeof array[i] !== "number" && Array.isArray(array) !== 'true') {
       return "Please enter valid numbers";
     }
     if (array[i] < 0) {
@@ -86,6 +86,9 @@ const myArray = [2, -5, -7, -13];
 console.log(findingBadData(myArray));
 
 const myArray2 = [-4, -9, -5, -33, "-55"];
+console.log(findingBadData(myArray2));
+
+const myArray3 = {hello:1, gg: 65};
 console.log(findingBadData(myArray2));
 
 // problem 5
